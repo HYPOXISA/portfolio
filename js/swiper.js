@@ -61,9 +61,9 @@ $(function () {
   // 롤링배너
   function move() {
     var left = parseInt($(".roll").css("left"));
-    if (left <= -250) {
-      $(".roll").css({ left: "-50px" });
-      $(".p2_tex ul li").first().appendTo(".p2_tex ul");
+    if (left <= -170) {
+      $(".roll").css({ left: "-22px" });
+      $(".roll li").first().appendTo(".roll");
     } else {
       $(".roll").css({ left: left - 1 + "px" });
     }

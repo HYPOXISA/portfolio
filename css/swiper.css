@@ -149,7 +149,7 @@ body {
     transition: 1s;
   }
   .p2_min {
-    margin-top: 10px;
+    margin-top: 5px;
     font-size: 20px;
   }
   .p2_long {
@@ -158,16 +158,41 @@ body {
     font-size: 25px;
     display: inline-block;
   }
+  .skillTop {
+    margin: 50px 0px 30px;
+    font-size: 30px !important;
+  }
+  .skill {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .skill li img {
+    width: 80%;
+    object-fit: contain;
+    animation: float 2s ease-in-out infinite;
+  }
+  @keyframes float {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
   /* rollring */
   .roll {
     width: 100%;
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: 20px;
+    bottom: -130px;
   }
   .roll img {
-    width: 200px;
+    width: 150px;
   }
   /* arrow */
   .arrow {
