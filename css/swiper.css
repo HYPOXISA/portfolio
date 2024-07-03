@@ -92,6 +92,7 @@ body {
     font-weight: bold;
   }
   .tex h1 {
+    width: 100%;
     font-family: "Seymour One", sans-serif;
     letter-spacing: 5px;
     font-size: 70px;
@@ -100,13 +101,14 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    z-index: 99;
   }
   .tex .polio {
     font-size: 20px;
     color: #73a477;
     position: absolute;
     top: 53%;
-    right: 28%;
+    right: 34rem;
   }
   .tex .day {
     position: absolute;
@@ -167,8 +169,12 @@ body {
     display: flex;
     justify-content: space-around;
   }
+  .skill li {
+    width: 5%;
+    align-items: center;
+    text-align: center;
+  }
   .skill li img {
-    width: 80%;
     object-fit: contain;
     animation: float 2s ease-in-out infinite;
   }
@@ -644,7 +650,7 @@ body {
   }
   #page1 img {
     width: 500px;
-    height: 560px;
+    height: 80%;
     filter: grayscale(1);
     display: block;
   }
@@ -658,7 +664,7 @@ body {
     width: 100%;
     font-family: "Seymour One", sans-serif;
     letter-spacing: 5px;
-    font-size: 70px;
+    font-size: 4rem;
     color: #73a477;
     position: absolute;
     top: 50%;
