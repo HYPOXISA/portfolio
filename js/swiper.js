@@ -73,7 +73,6 @@ $(function () {
   // page3,4
   $(document).ready(function () {
     var slideInterval;
-    var illustSlideInterval;
 
     // web 슬라이드
     function startSlide() {
@@ -85,18 +84,7 @@ $(function () {
       }, 4000);
     }
 
-    // illust 슬라이드
-    function startIllustSlide() {
-      illustSlideInterval = setInterval(function () {
-        $(".illust").animate({ left: "-34%" }, 1500, function () {
-          $(".illust li:first").appendTo(".illust");
-          $(".illust").css({ left: 0 });
-        });
-      }, 4000);
-    }
-
     startSlide();
-    startIllustSlide();
 
     // web li:stop
     $(".web li").on("mouseenter", function () {
@@ -106,28 +94,12 @@ $(function () {
       startSlide();
     });
 
-    // illust li:stop
-    $(".illust li").on("mouseenter", function () {
-      clearInterval(illustSlideInterval);
-    });
-    $(".illust li").on("mouseleave", function () {
-      startIllustSlide();
-    });
-
     // web button
     $(".web-left").on("click", function () {
       moveLeft();
     });
     $(".web-right").on("click", function () {
       moveRight();
-    });
-
-    // illust button
-    $(".illust-left").on("click", function () {
-      moveIllustLeft();
-    });
-    $(".illust-right").on("click", function () {
-      moveIllustRight();
     });
 
     // web button 함수
@@ -145,24 +117,6 @@ $(function () {
         .animate({ left: "38%" }, 300, function () {
           $(".web li:last-child").prependTo(".web");
           $(".web").css({ left: 0 });
-        });
-    }
-
-    // illust button 함수
-    function moveIllustLeft() {
-      $(".illust")
-        .stop()
-        .animate({ left: "-34%" }, 300, function () {
-          $(".illust li:first-child").appendTo(".illust");
-          $(".illust").css({ left: 0 });
-        });
-    }
-    function moveIllustRight() {
-      $(".illust")
-        .stop()
-        .animate({ left: "34%" }, 300, function () {
-          $(".illust li:last-child").prependTo(".illust");
-          $(".illust").css({ left: 0 });
         });
     }
 
@@ -229,18 +183,18 @@ $(function () {
       switch (imgSrc) {
         case "img/늘해랑.JPG":
           content =
-            "<ul><li><h2>늘해랑</h2><p class='title'>수공예 도자기의 특별한 가치</p><p class='main'>PAGE: Main + Sub*13<br>TOOL: Figma, HTML, CSS, JS(jQuery),React<br>PROCESS: Swiper Js<br>참여도: 100%</li><li><img src='img/늘해랑_반응형.png' alt='늘해랑'></li></ul><button>Figma</button>";
+            "<ul><li><h2>늘해랑</h2><p class='title'>수공예 도자기의 특별한 가치</p><p class='main'>PAGE: Main + Sub*13<br>TOOL: Figma, HTML, CSS, JS(jQuery),React<br>PROCESS: Swiper Js<br>참여도: 100%</li><li><img src='img/늘해랑_반응형.png' alt='늘해랑'></li></ul>";
           break;
         case "img/sant.JPG":
           content =
-            "<ul><li><h2>Santa Maria Novella</h2><p class='title'>800년 피렌체 헤리티지를 담은 라이프스타일 뷰티</p><p class='main'>PAGE: Main + Sub*5<br>TOOL: Figma, HTML, CSS, JS(jQuery)<br>PROCESS: Swiper Js, Googlemap<br>참여도: 100%</li><li><img src='img/산타마리아-노벨라_반응형.png' alt='산타마리아 노벨라'></li></ul><button>Figma</button>";
+            "<ul><li><h2>Santa Maria Novella</h2><p class='title'>800년 피렌체 헤리티지를 담은 라이프스타일 뷰티</p><p class='main'>PAGE: Main + Sub*5<br>TOOL: Figma, HTML, CSS, JS(jQuery)<br>PROCESS: Swiper Js, Googlemap<br>참여도: 100%</li><li><img src='img/산타마리아-노벨라_반응형.png' alt='산타마리아 노벨라'></li></ul>";
           break;
         case "img/movie1.JPG":
           content = "<h2>영화 조별</h2><p>영화 조별 사이트 설명...</p>";
           break;
         case "img/todoList.JPG":
           content =
-            "<ul><li><h2>Calendar AND ToDoList</h2><p class='title'>바쁜 일정을 보다 쉽게 정리하고 알려줍니다.</p><p class='main'>PAGE: Main<br>TOOL: Figma, HTML, CSS, JS(Java Script)<br>참여도: 100%<br>기능설명: 원하는 날을 선택하고 일정을 등록하면 캘린더에 빨간 점이 나타나며 어느 날짜에 일정이 있는지 보기 쉽게 알려줍니다.</li><li><img src='img/투두리스트_반응형.png' alt='투두리스트'></li></ul><button>Figma</button>";
+            "<ul><li><h2>Calendar AND ToDoList</h2><p class='title'>바쁜 일정을 보다 쉽게 정리하고 알려줍니다.</p><p class='main'>PAGE: Main<br>TOOL: Figma, HTML, CSS, JS(Java Script)<br>참여도: 100%<br>기능설명: 원하는 날을 선택하고 일정을 등록하면 캘린더에 빨간 점이 나타나며 어느 날짜에 일정이 있는지 보기 쉽게 알려줍니다.</li><li><img src='img/투두리스트_반응형.png' alt='투두리스트'></li></ul>";
           break;
         case "img/weather.JPG":
           content = "<h2>날씨 API</h2><p>날씨 API 사이트 설명...</p>";
