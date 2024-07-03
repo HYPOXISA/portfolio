@@ -1,0 +1,1486 @@
+@charset "utf-8";
+* {
+  margin: 0px;
+  padding: 0px;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+  color: white;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 1280px) {
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* css */
+  /* header */
+  header {
+    font-family: "Shadows Into Light", cursive;
+    letter-spacing: 10px;
+  }
+  header ul {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    position: fixed;
+    z-index: 99;
+    font-size: 20px;
+  }
+  header li {
+    width: calc(100% / 4);
+    color: gray;
+    cursor: pointer;
+  }
+  .head > li.on {
+    color: #73a477;
+  }
+  /* page1 */
+  #page1 {
+    height: 100vh;
+  }
+  #page1 .img {
+    width: 500px;
+    margin: 0px auto;
+    border: 3px solid #73a477;
+    position: relative;
+    top: 120px;
+  }
+  #page1 img {
+    width: 500px;
+    filter: grayscale(1);
+    display: block;
+  }
+  .tex > p {
+    font-family: "Shadows Into Light", cursive;
+    letter-spacing: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .tex h1 {
+    font-family: "Seymour One", sans-serif;
+    letter-spacing: 5px;
+    font-size: 70px;
+    color: #73a477;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .tex .polio {
+    font-size: 20px;
+    color: #73a477;
+    position: absolute;
+    top: 53%;
+    right: 28%;
+  }
+  .tex .day {
+    position: absolute;
+    bottom: 10%;
+    right: 35%;
+  }
+  /* page2 */
+  #page2 {
+    height: 100vh;
+  }
+  #page2 h2 {
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 80px;
+  }
+  #page2 p {
+    font-family: "Noto Sans KR", sans-serif;
+    color: white;
+  }
+  .p2_tex {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    margin: 0px auto;
+    padding: 60px;
+    text-align: center;
+    background-color: black;
+    position: relative;
+    top: 100px;
+    overflow: hidden;
+    will-change: transform, opacity;
+  }
+  .p2_tex.on {
+    width: 80%;
+    height: 70%;
+    border-radius: 80px;
+    transition: 1s;
+  }
+  .p2_min {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .p2_long {
+    margin: 50px 0px;
+    line-height: 40px;
+    font-size: 25px;
+  }
+  /* rollring */
+  .roll {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 20px;
+  }
+  .roll img {
+    width: 200px;
+  }
+  /* arrow */
+  .arrow {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .arrow i {
+    font-size: 55px;
+    position: relative;
+    top: -600px;
+  }
+  .arrow .left {
+    transform: rotate(45deg);
+  }
+  .arrow .right {
+    transform: rotate(-45deg);
+  }
+  /* page3_Web*/
+  #page3 {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+  }
+  #page3 > h2 {
+    width: 70%;
+    padding-top: 150px;
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 80px;
+  }
+  #page3 > h2 span {
+    font-size: 30px;
+    color: white !important;
+  }
+  .webBox {
+    width: 85%;
+    height: 40%;
+    margin: 0px auto;
+    position: relative;
+    top: 55%;
+    transform: translateY(-130%);
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .web {
+    width: calc(500% / 5);
+    height: 100%;
+    gap: 20px;
+    margin: 20px auto 0px;
+    display: flex;
+    position: relative;
+    left: 0;
+  }
+  .web > li {
+    width: 100%;
+    height: 70%;
+    border: 1px solid gray;
+    border-radius: 50px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  .web > li div {
+    width: 80%;
+    margin: 20px auto 0px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .web > li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 20px;
+  }
+  #page4 button,
+  .web > li button {
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    background: transparent;
+    border: 3px solid #73a477;
+    border-radius: 30px;
+  }
+  .web img {
+    border-radius: 50px;
+  }
+  .web > li:hover img {
+    filter: brightness(0.5);
+  }
+  /* page4_illust */
+  #page4 {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    overflow: hidden;
+  }
+  #page4 > h2 {
+    width: 70%;
+    padding-top: 150px;
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 80px;
+  }
+  #page4 > h2 span {
+    font-size: 30px;
+    color: white !important;
+  }
+
+  .illustBox {
+    width: 85%;
+    height: 40%;
+    margin: 0px auto;
+    position: relative;
+    top: 55%;
+    transform: translateY(-130%);
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .illust {
+    width: calc(600% / 3);
+    height: 100%;
+    gap: 20px;
+    margin: 20px auto 0px;
+    display: flex;
+    position: relative;
+    left: 0;
+  }
+  .illust > li {
+    width: 100%;
+    height: 70%;
+    border: 1px solid gray;
+    border-radius: 50px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  .illust img {
+    border-radius: 50px;
+  }
+  .illust > li:hover img {
+    filter: brightness(0.5);
+  }
+  /* button */
+  #page4 .mo {
+    margin-top: 20px;
+  }
+  .illust_buttons {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 25%;
+    right: 600px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .buttons {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 24%;
+    right: 600px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  button {
+    color: white;
+    font-size: 20px;
+  }
+  #page3 i,
+  #page4 i {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    pointer-events: auto;
+    color: white;
+  }
+  /* motion */
+  /* 초기 상태 설정 */
+  .web,
+  .illust {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* 나타난 상태 */
+  .web.visible,
+  .illust.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* page5 */
+  #page5 {
+    height: 100vh;
+  }
+  .p4_tex {
+    width: 80%;
+    height: 75%;
+    margin: 0px auto;
+    padding: 60px;
+    text-align: center;
+    border-radius: 80px;
+    position: relative;
+    top: 50px;
+  }
+  #page5 h2 {
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 80px;
+  }
+  #page5 p {
+    font-family: "Noto Sans KR", sans-serif;
+    /* color: white; */
+  }
+  .p4_tex > p {
+    margin-top: 20px;
+    font-size: 30px;
+  }
+  .profill {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -200px;
+    opacity: 0;
+    transition: 1.5s;
+  }
+  .profill.on {
+    top: 0px;
+    opacity: 1;
+    transition: 1.5s;
+  }
+  #page5 img {
+    width: 400px;
+  }
+  .profill > li:first-child {
+    width: 450px;
+    padding: 20px;
+    border: 5px dashed #73a477;
+    box-sizing: border-box;
+    position: relative;
+    top: 30px;
+  }
+  .profill > li:last-child {
+    text-align: left;
+    font-size: 30px;
+    position: relative;
+    top: 70px;
+    right: 50px;
+  }
+  .profill > li:last-child > p {
+    font-size: 45px;
+    line-height: 70px;
+  }
+  .about {
+    margin: 50px 0px;
+    line-height: 45px;
+  }
+  .sns {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 70px;
+  }
+  /* nav */
+  .swiper-pagination-bullet {
+    width: 6px !important;
+    height: 80px !important;
+    display: inline-block;
+    border-radius: 10px !important;
+    background: hsl(0, 0%, 43%) !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: #73a477 !important;
+    transition: 0.5s !important;
+  }
+  .swiper-pagination-vertical.swiper-pagination-bullets,
+  .swiper-vertical > .swiper-pagination-bullets {
+    width: 20px !important;
+    left: 10px !important;
+    top: 50%;
+    transform: translate3d(0px, -50%, 0);
+  }
+  /* 모달 박스 배경 */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    transition: background-color 0.3s ease;
+  }
+
+  /* 모달 콘텐츠 박스 */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    border-radius: 20px;
+    width: 0%;
+    transition: width 1s ease;
+  }
+  .modal-content.show {
+    width: 80%;
+  }
+  .modal-content h2 {
+    font-size: 2.5rem;
+  }
+  .modal-content .title {
+    padding-bottom: 10px;
+    border-bottom: 1px solid gray;
+  }
+  .modal-content .main {
+    width: 100%;
+    display: block;
+    margin-top: 20px;
+    line-height: 25px;
+    font-size: 1rem;
+  }
+  .modal-content ul {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: space-around;
+    border: 4px double #006400;
+    border-radius: 20px;
+  }
+  .modal-content li {
+    width: 100%;
+    height: 50%;
+  }
+  .modal-content li:first-child {
+    padding: 100px 200px;
+    position: relative;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+  }
+  .modal-content li:last-child {
+    position: relative;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+  }
+  .modal-content img {
+    width: 100%;
+  }
+  .modal-content button {
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    border: 2px solid #006400;
+    border-radius: 20px;
+    color: #000;
+    position: absolute;
+    bottom: 250px;
+    left: 550px;
+  }
+
+  /* 닫기 버튼 */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+@media (min-width: 429px) and (max-width: 1280px) {
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* css */
+  /* header */
+  header {
+    font-family: "Shadows Into Light", cursive;
+    letter-spacing: 10px;
+  }
+  header ul {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    position: fixed;
+    z-index: 99;
+    font-size: 20px;
+  }
+  header li {
+    width: calc(100% / 4);
+    color: gray;
+    cursor: pointer;
+  }
+  .head > li.on {
+    color: #73a477;
+  }
+  /* page1 */
+  #page1 {
+    height: 100vh;
+  }
+  #page1 .img {
+    width: 500px;
+    margin: 0px auto;
+    border: 3px solid #73a477;
+    position: relative;
+    top: 120px;
+  }
+  #page1 img {
+    width: 500px;
+    height: 560px;
+    filter: grayscale(1);
+    display: block;
+  }
+  .tex > p {
+    font-family: "Shadows Into Light", cursive;
+    letter-spacing: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .tex h1 {
+    width: 100%;
+    font-family: "Seymour One", sans-serif;
+    letter-spacing: 5px;
+    font-size: 70px;
+    color: #73a477;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .tex .polio {
+    font-size: 20px;
+    color: #73a477;
+    position: absolute;
+    top: 54%;
+    right: 23%;
+  }
+  .tex .day {
+    position: absolute;
+    bottom: 13%;
+    right: 33%;
+  }
+  /* page2 */
+  #page2 {
+    height: 100vh;
+  }
+  #page2 h2 {
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 80px;
+  }
+  #page2 p {
+    font-family: "Noto Sans KR", sans-serif;
+    color: white;
+  }
+  .p2_tex {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    margin: 0px auto;
+    padding: 60px;
+    text-align: center;
+    background-color: black;
+    position: relative;
+    top: 100px;
+    overflow: hidden;
+    will-change: transform, opacity;
+  }
+  .p2_tex.on {
+    width: 80%;
+    height: 70%;
+    border-radius: 80px;
+    transition: 1s;
+  }
+  .p2_min {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .p2_long {
+    width: 70%;
+    margin: 30px auto;
+    line-height: 40px;
+    font-size: 25px;
+  }
+  /* rollring */
+  .roll {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 0px;
+  }
+  .roll img {
+    width: 200px;
+  }
+  /* arrow */
+  .arrow {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .arrow i {
+    font-size: 55px;
+    position: relative;
+    top: -580px;
+  }
+  .arrow .left {
+    transform: rotate(45deg);
+  }
+  .arrow .right {
+    transform: rotate(-45deg);
+  }
+  /* page3_Web*/
+  #page3 {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+  }
+  #page3 > h2 {
+    width: 70%;
+    padding-top: 150px;
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 80px;
+  }
+  #page3 > h2 span {
+    font-size: 30px;
+    color: white !important;
+  }
+  .webBox {
+    width: 85%;
+    height: 40%;
+    margin: 0px auto;
+    position: relative;
+    top: 55%;
+    transform: translateY(-130%);
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .web {
+    width: calc(500% / 5);
+    height: 100%;
+    gap: 20px;
+    margin: 20px auto 0px;
+    display: flex;
+    position: relative;
+    left: 0;
+  }
+  .web > li {
+    width: 100%;
+    height: 70%;
+    border: 1px solid gray;
+    border-radius: 50px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  .web > li div {
+    width: 80%;
+    margin: 20px auto 0px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .web > li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 20px;
+  }
+  .web > li button {
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    background: transparent;
+    border: 3px solid #73a477;
+    border-radius: 30px;
+  }
+  .web img {
+    border-radius: 50px;
+  }
+  .web > li:hover img {
+    filter: brightness(0.5);
+  }
+  /* page4_illust */
+  #page4 {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    overflow: hidden;
+  }
+  #page4 > h2 {
+    width: 70%;
+    padding-top: 150px;
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 80px;
+  }
+  #page4 > h2 span {
+    font-size: 30px;
+    color: white !important;
+  }
+
+  .illustBox {
+    width: 85%;
+    height: 40%;
+    margin: 0px auto;
+    position: relative;
+    top: 55%;
+    transform: translateY(-130%);
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .illust {
+    width: calc(600% / 3);
+    height: 100%;
+    gap: 20px;
+    margin: 20px auto 0px;
+    display: flex;
+    position: relative;
+    left: 0;
+  }
+  .illust > li {
+    width: 100%;
+    height: 70%;
+    border: 1px solid gray;
+    border-radius: 50px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  .illust img {
+    border-radius: 50px;
+  }
+  .illust > li:hover img {
+    filter: brightness(0.5);
+  }
+  /* button */
+  .illust_buttons {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 25%;
+    right: 350px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .buttons {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 25%;
+    right: 350px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  button {
+    color: white;
+    font-size: 20px;
+  }
+  #page3 i,
+  #page4 i {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    pointer-events: auto;
+    color: white;
+  }
+  /* motion */
+  /* 초기 상태 설정 */
+  .web,
+  .illust {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* 나타난 상태 */
+  .web.visible,
+  .illust.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* page5 */
+  #page5 {
+    height: 100vh;
+  }
+  .p4_tex {
+    width: 80%;
+    height: 75%;
+    margin: 0px auto;
+    padding: 60px;
+    text-align: center;
+    border-radius: 80px;
+    position: relative;
+  }
+  #page5 h2 {
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 80px;
+  }
+  #page5 p {
+    margin-top: -10px;
+    font-family: "Noto Sans KR", sans-serif;
+  }
+  .p4_tex > p {
+    margin-top: 20px;
+    font-size: 30px;
+  }
+  .profill {
+    width: 90%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -150px;
+    opacity: 0;
+    transition: 1.5s;
+  }
+  .profill.on {
+    top: 0px;
+    opacity: 1;
+    transition: 1.5s;
+  }
+  #page5 img {
+    width: 400px;
+  }
+  .profill > li:first-child {
+    width: 450px;
+    padding: 20px;
+    border: 5px dashed #73a477;
+    box-sizing: border-box;
+    position: relative;
+    top: 30px;
+  }
+  .profill > li:last-child {
+    text-align: left;
+    font-size: 30px;
+    position: relative;
+    top: 70px;
+  }
+  .profill > li:last-child > p {
+    font-size: 45px;
+    line-height: 70px;
+  }
+  .about {
+    margin: 50px 0px;
+    line-height: 45px;
+  }
+  .sns {
+    width: 200px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 70px;
+  }
+  /* nav */
+  .swiper-pagination-bullet {
+    width: 6px !important;
+    height: 80px !important;
+    display: inline-block;
+    border-radius: 10px !important;
+    background: hsl(0, 0%, 43%) !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: #73a477 !important;
+    transition: 0.5s !important;
+  }
+  .swiper-pagination-vertical.swiper-pagination-bullets,
+  .swiper-vertical > .swiper-pagination-bullets {
+    width: 20px !important;
+    left: 10px !important;
+    top: 50%;
+    transform: translate3d(0px, -50%, 0);
+  }
+  /* 모달 박스 배경 */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  /* 모달 콘텐츠 박스 */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 200px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  /* 닫기 버튼 */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+@media (max-width: 428px) {
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  /* css */
+  /* header */
+  header {
+    font-family: "Shadows Into Light", cursive;
+    letter-spacing: 10px;
+    display: none;
+  }
+  header ul {
+    width: calc(100% / 5);
+    height: 50px;
+    gap: 10px;
+    line-height: 50px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    position: fixed;
+    z-index: 99;
+    /* font-size: 20px; */
+  }
+  header li {
+    width: 100%;
+    color: gray;
+    cursor: pointer;
+  }
+  .head > li.on {
+    color: #73a477;
+  }
+  /* page1 */
+  #page1 {
+    height: 100vh;
+  }
+  #page1 .img {
+    width: 60%;
+    margin: 0px auto;
+    border: 3px solid #73a477;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  #page1 img {
+    width: 100%;
+    filter: grayscale(1);
+    display: block;
+  }
+  .tex > p {
+    font-family: "Shadows Into Light", cursive;
+    /* letter-spacing: 10px; */
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .tex h1 {
+    width: 100%;
+    font-family: "Seymour One", sans-serif;
+    letter-spacing: 5px;
+    font-size: 1.7rem;
+    color: #73a477;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .tex .polio {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #73a477;
+    position: absolute;
+    top: 52%;
+    right: 1%;
+  }
+  .tex .day {
+    position: absolute;
+    bottom: 23%;
+    right: 17%;
+  }
+  /* page2 */
+  #page2 {
+    height: 100vh;
+  }
+  #page2 h2 {
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 30px;
+  }
+  #page2 p {
+    font-family: "Noto Sans KR", sans-serif;
+    color: white;
+  }
+  .p2_tex {
+    width: 0%;
+    height: 100vh;
+    margin: 0px auto;
+    padding: 30px 0px;
+    text-align: center;
+    background-color: black;
+  }
+  .p2_tex.on {
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+  }
+  .p2_min {
+    margin-top: 10px;
+    font-size: 20px;
+  }
+  .p2_long {
+    margin: 50px;
+    line-height: 40px;
+    font-size: 1.2rem;
+  }
+  /* rollring */
+  .roll {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -30px;
+  }
+  .roll img {
+    width: 200px;
+  }
+  /* arrow */
+  .arrow {
+    width: 80%;
+    margin: 0px auto;
+    display: flex;
+    justify-content: space-between;
+  }
+  .arrow i {
+    font-size: 55px;
+    position: relative;
+    top: -700px;
+  }
+  .arrow .left {
+    transform: rotate(45deg);
+  }
+  .arrow .right {
+    transform: rotate(-45deg);
+  }
+  /* page3_Web*/
+  #page3 {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    overflow: hidden;
+  }
+  #page3 > h2 {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 150px;
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 3rem;
+  }
+  #page3 > h2 span {
+    font-size: 30px;
+    color: white !important;
+  }
+  .webBox {
+    width: 85%;
+    height: 40%;
+    margin: 0px auto;
+    position: relative;
+    top: 55%;
+    transform: translateY(-130%);
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .web {
+    width: calc(500% / 5);
+    height: 100%;
+    gap: 20px;
+    margin: 20px auto 0px;
+    display: flex;
+    position: relative;
+    left: 0;
+  }
+  .web > li {
+    width: 100%;
+    height: 70%;
+    border: 1px solid gray;
+    border-radius: 50px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  .web > li div {
+    width: 80%;
+    margin: 20px auto 0px;
+    display: flex;
+    justify-content: space-around;
+  }
+  .web > li a {
+    width: 100%;
+    height: 100%;
+    display: block;
+    font-size: 20px;
+  }
+  .web > li button {
+    width: 300px;
+    height: 50px;
+    line-height: 50px;
+    background: transparent;
+    border: 3px solid #73a477;
+    border-radius: 30px;
+  }
+  .web img {
+    border-radius: 50px;
+  }
+  .web > li:hover img {
+    filter: brightness(0.5);
+  }
+  /* page4_illust */
+  #page4 {
+    width: 100%;
+    height: 100vh;
+    background-color: #000000;
+    overflow: hidden;
+  }
+  #page4 > h2 {
+    width: 70%;
+    margin-left: 50px;
+    padding-top: 150px;
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 3rem;
+  }
+  #page4 > h2 span {
+    font-size: 30px;
+    color: white !important;
+  }
+
+  .illustBox {
+    width: 85%;
+    height: 40%;
+    margin: 0px auto;
+    position: relative;
+    top: 55%;
+    transform: translateY(-130%);
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .illust {
+    width: calc(600% / 1);
+    height: 100%;
+    gap: 20px;
+    margin: 20px auto 0px;
+    display: flex;
+    position: relative;
+    left: 0;
+  }
+  .illust > li {
+    width: 100%;
+    height: 70%;
+    border: 1px solid gray;
+    border-radius: 50px;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  .illust img {
+    border-radius: 50px;
+  }
+  .illust > li:hover img {
+    filter: brightness(0.5);
+  }
+  /* button */
+  .illust_buttons {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 24%;
+    right: 600px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .buttons {
+    width: 180px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 24%;
+    right: 600px;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  button {
+    color: white;
+    font-size: 20px;
+  }
+  #page3 i,
+  #page4 i {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border: 2px solid white;
+    border-radius: 50%;
+    font-size: 30px;
+    text-align: center;
+    cursor: pointer;
+    pointer-events: auto;
+    color: white;
+  }
+  /* motion */
+  /* 초기 상태 설정 */
+  .web,
+  .illust {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+  /* 나타난 상태 */
+  .web.visible,
+  .illust.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* page5 */
+  #page5 {
+    height: 100vh;
+  }
+  .p4_tex {
+    width: 80%;
+    height: 75%;
+    margin: 0px auto;
+    padding: 60px;
+    text-align: center;
+    border-radius: 80px;
+    position: relative;
+    top: 20px;
+  }
+  #page5 h2 {
+    font-family: "Seymour One", sans-serif;
+    color: #73a477;
+    font-size: 3rem;
+  }
+  #page5 p {
+    font-family: "Noto Sans KR", sans-serif;
+    /* color: white; */
+  }
+  .p4_tex > p {
+    margin-top: 20px;
+    font-size: 20px;
+  }
+  .profill {
+    width: 90%;
+    margin: 0px auto;
+    position: relative;
+    top: -200px;
+    left: 50px;
+    opacity: 0;
+    transition: 1.5s;
+  }
+  .profill.on {
+    top: 0px;
+    opacity: 1;
+    transition: 1.5s;
+  }
+  .profill > li:first-child {
+    width: 100%;
+    height: 500px;
+    padding: 20px;
+    border: 5px dashed #73a477;
+    box-sizing: border-box;
+    position: relative;
+    top: 30px;
+    display: none;
+  }
+  .profill > li:last-child {
+    text-align: left;
+    font-size: 30px;
+    position: relative;
+    top: 70px;
+    right: 50px;
+  }
+  .profill > li:last-child > p {
+    font-size: 20px;
+    line-height: 70px;
+  }
+  .about {
+    margin: 50px 0px;
+    line-height: 45px;
+    font-size: 15px;
+  }
+
+  /* nav */
+  .swiper-pagination-bullet {
+    width: 6px !important;
+    height: 80px !important;
+    display: inline-block;
+    border-radius: 10px !important;
+    background: hsl(0, 0%, 43%) !important;
+  }
+  .swiper-pagination-bullet-active {
+    background: #73a477 !important;
+    transition: 0.5s !important;
+  }
+  .swiper-pagination-vertical.swiper-pagination-bullets,
+  .swiper-vertical > .swiper-pagination-bullets {
+    width: 20px !important;
+    left: 10px !important;
+    top: 50%;
+    transform: translate3d(0px, -50%, 0);
+  }
+  /* 모달 박스 배경 */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  /* 모달 콘텐츠 박스 */
+  .modal-content {
+    background-color: #fefefe;
+    margin: 200px auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  /* 닫기 버튼 */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
