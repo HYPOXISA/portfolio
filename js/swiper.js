@@ -199,11 +199,11 @@ $(function () {
         case "img/weather.JPG":
           content = "<h2>날씨 API</h2><p>날씨 API 사이트 설명...</p>";
           break;
-        case "img/오징어.JPG":
+        case "img/오징어.jpg":
           content =
             "<ul><li><h2>오징어 일러스트</h2><p class='title'>일러스트 설명</p><p class='main'>TOOL: Illustrator<br>참여도: 100%</li><li><img class='illustImg' src='img/오징어.jpg' alt='오징어 일러스트'></li></ul>";
           break;
-        case "img/pink.JPG":
+        case "img/pink.jpg":
           content =
             "<ul><li><h2>KARINA</h2><p class='title'>일러스트 설명</p><p class='main'>TOOL: Illustrator<br>참여도: 100%</li><li><img class='illustImg' src='img/pink.jpg' alt='pink 일러스트'></class='illust'li></ul>";
           break;
