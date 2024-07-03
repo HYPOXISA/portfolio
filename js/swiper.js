@@ -174,7 +174,7 @@ $(function () {
     var modalBody = $("#modal-body");
 
     // .mo 버튼 클릭 시 모달 표시 및 내용 로드
-    $(".mo").on("click", function () {
+    $(".mo,#page4 img").on("click", function () {
       var parent = $(this).parent().parent();
       var imgSrc = parent.find("img").attr("src");
       var content = "";
@@ -201,11 +201,11 @@ $(function () {
           break;
         case "img/오징어.JPG":
           content =
-            "<ul><li><h2>오징어 일러스트</h2><p class='title'>일러스트 설명</p><p class='main'>TOOL: Illustrator<br>참여도: 100%</li><li><img src='img/오징어.jpg' alt='오징어 일러스트'></li></ul>";
+            "<ul><li><h2>오징어 일러스트</h2><p class='title'>일러스트 설명</p><p class='main'>TOOL: Illustrator<br>참여도: 100%</li><li><img class='illustImg' src='img/오징어.jpg' alt='오징어 일러스트'></li></ul>";
           break;
         case "img/pink.JPG":
           content =
-            "<ul><li><h2>KARINA</h2><p class='title'>일러스트 설명</p><p class='main'>TOOL: Illustrator<br>참여도: 100%</li><li><img src='img/pink.jpg' alt='pink 일러스트'></li></ul>";
+            "<ul><li><h2>KARINA</h2><p class='title'>일러스트 설명</p><p class='main'>TOOL: Illustrator<br>참여도: 100%</li><li><img class='illustImg' src='img/pink.jpg' alt='pink 일러스트'></class='illust'li></ul>";
           break;
         default:
           content = "<h2>이미지 설명</h2><p>기본 설명...</p>";
