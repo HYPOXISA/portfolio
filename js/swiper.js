@@ -1,4 +1,5 @@
 $(function () {
+  // Swiper 초기화
   var swiper = new Swiper(".mySwiper", {
     direction: "vertical",
     slidesPerView: 1,
@@ -11,22 +12,12 @@ $(function () {
     on: {
       slideChange: function () {
         var activeIndex = swiper.activeIndex;
-        $(".head li").removeClass("on");
-        $(".head li").eq(activeIndex).addClass("on");
+        $(".head li").removeClass("on").eq(activeIndex).addClass("on");
         $("#modal").css("display", "none");
 
         // .p2_tex 및 .profill의 움직임
-        if (activeIndex === 1) {
-          $(".p2_tex").addClass("on");
-        } else {
-          $(".p2_tex").removeClass("on");
-        }
-
-        if (activeIndex === 4) {
-          $(".profill").addClass("on");
-        } else {
-          $(".profill").removeClass("on");
-        }
+        $(".p2_tex").toggleClass("on", activeIndex === 1);
+        $(".profill").toggleClass("on", activeIndex === 4);
       },
     },
   });
@@ -34,8 +25,7 @@ $(function () {
   // header 클릭 이벤트
   $(".head > li").on("click", function () {
     var i = $(this).index();
-    $(".head > li").removeClass("on");
-    $(".head > li").eq(i).addClass("on");
+    $(".head > li").removeClass("on").eq(i).addClass("on");
     swiper.slideTo(i, 1000, false); // Swiper 슬라이드로 이동
   });
 
@@ -70,51 +60,44 @@ $(function () {
   }
   setInterval(move, 20);
 
+  // web 슬라이드
   var slideInterval;
 
-  // web 슬라이드
   function startSlide() {
     slideInterval = setInterval(function () {
       $(".web").animate({ left: "-38%" }, 1500, function () {
-        $(".web li:first").appendTo(".web");
-        $(".web").css({ left: 0 });
+        $(".web li:first").appendTo(".web").parent().css({ left: 0 });
       });
     }, 4000);
   }
-
   startSlide();
 
   // web li:stop
-  $(".web li").on("mouseenter", function () {
-    clearInterval(slideInterval);
-  });
-  $(".web li").on("mouseleave", function () {
-    startSlide();
-  });
+  $(".web li")
+    .on("mouseenter", function () {
+      clearInterval(slideInterval);
+    })
+    .on("mouseleave", function () {
+      startSlide();
+    });
 
   // web button
-  $(".web-left").on("click", function () {
-    moveLeft();
-  });
-  $(".web-right").on("click", function () {
-    moveRight();
-  });
+  $(".web-left").on("click", moveLeft);
+  $(".web-right").on("click", moveRight);
 
   // web button 함수
   function moveLeft() {
     $(".web")
       .stop()
       .animate({ left: "-38%" }, 300, function () {
-        $(".web li:first-child").appendTo(".web");
-        $(".web").css({ left: 0 });
+        $(".web li:first-child").appendTo(this).parent().css({ left: 0 });
       });
   }
   function moveRight() {
     $(".web")
       .stop()
       .animate({ left: "38%" }, 300, function () {
-        $(".web li:last-child").prependTo(".web");
-        $(".web").css({ left: 0 });
+        $(".web li:last-child").prependTo(this).parent().css({ left: 0 });
       });
   }
 
@@ -169,12 +152,36 @@ $(function () {
   var modalBody = $("#modal-body");
 
   // .mo 버튼 클릭 시 모달 표시 및 내용 로드
-  $(".mo,#page4 img").on("click", function () {
+  $(".mo").on("click", function () {
     var parent = $(this).parent().parent();
     var imgSrc = parent.find("img").attr("src");
+    var content = getContentByImageSrc(imgSrc);
+
+    // 모달 내용 설정 및 표시
+    modalBody.html(content); // modalBody에 내용 추가
+    modal.css("display", "block");
+    setTimeout(function () {
+      modalContent.addClass("show");
+    }, 10);
+  });
+
+  // #page4 img 클릭 시 모달 표시 및 내용 로드
+  $("#page4 img").on("click", function () {
+    var imgSrc = $(this).attr("src");
+    var content = getContentByImageSrc(imgSrc);
+
+    // 모달 내용 설정 및 표시
+    modalBody.html(content); // modalBody에 내용 추가
+    modal.css("display", "block");
+    setTimeout(function () {
+      modalContent.addClass("show");
+    }, 10);
+  });
+
+  // 이미지 src에 따라 컨텐츠를 반환하는 함수
+  function getContentByImageSrc(imgSrc) {
     var content = "";
 
-    // 각 .mo 버튼에 맞는 내용 설정
     switch (imgSrc) {
       case "img/늘해랑.JPG":
         content =
@@ -195,41 +202,36 @@ $(function () {
         content =
           "<h2>날씨 API</h2><p>날씨 API 사이트 설명...</p><h1>준비중...</h1>";
         break;
-      case "img/오징어.jpg":
+      case "img/오징어.JPG":
         content =
-          "<ul><li><h2>오징어 일러스트</h2><p class='title'>일러스트 설명</p><p class='main'>TOOL: Illustrator<br>참여도: 100%</li><li><img class='illustImg' src='img/오징어.jpg' alt='오징어 일러스트'></li></ul>";
+          "<ul><li><h2>오징어 일러스트</h2><p class='title'>일러스트 설명</p><p class='main'>TOOL: Illustrator<br>참여도: 100%</li><li><img class='illustImg' src='img/오징어.JPG' alt='오징어 일러스트'></li></ul>";
         break;
-      case "img/pink.jpg":
+      case "img/pink.JPG":
         content =
-          "<ul><li><h2>KARINA</h2><p class='title'>일러스트 설명</p><p class='main'>TOOL: Illustrator<br>참여도: 100%</li><li><img class='illustImg' src='img/pink.jpg' alt='pink 일러스트'></class='illust'li></ul>";
+          "<ul><li><h2>KARINA</h2><p class='title'>일러스트 설명</p><p class='main'>TOOL: Illustrator<br>참여도: 100%</li><li><img class='illustImg' src='img/pink.JPG' alt='KARINA 일러스트'></li></ul>";
         break;
       default:
         content = "<h2>이미지 설명</h2><p>기본 설명...</p>";
     }
 
-    // 모달 내용 설정 및 표시
-    modalContent.html(content);
-    modal.css("display", "block");
-    setTimeout(function () {
-      modalContent.addClass("show");
-    }, 10);
-  });
+    return content;
+  }
 
   // 모달 닫기
-  $(".close").on("click", function () {
+  $(".close, #modal").on("click", function () {
     modalContent.removeClass("show");
     setTimeout(function () {
       modal.css("display", "none");
-    }, 1000); // 애니메이션 완료 후 모달을 숨깁니다.
+    }, 500); // 애니메이션 완료 후 모달을 숨깁니다.
   });
+});
 
-  // 모달 영역 밖 클릭 시 모달 닫기
-  $(window).on("click", function (event) {
-    if ($(event.target).is(modal)) {
-      modalContent.removeClass("show");
-      setTimeout(function () {
-        modal.css("display", "none");
-      }, 500); // 애니메이션 완료 후 모달을 숨깁니다.
-    }
-  });
+// 모달 영역 밖 클릭 시 모달 닫기
+$(window).on("click", function (event) {
+  if ($(event.target).is(modal)) {
+    modalContent.removeClass("show");
+    setTimeout(function () {
+      modal.css("display", "none");
+    }, 500); // 애니메이션 완료 후 모달을 숨깁니다.
+  }
 });
